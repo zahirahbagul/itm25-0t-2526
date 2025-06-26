@@ -77,26 +77,10 @@ def scytale_decipher(message, shift):
     '''Scytale De-cipher.
 
     Decrypts a message that was originally encrypted with the `scytale_cipher` function above.
-
-    Example:
-    scytale_decipher("IMNNA_FTAOIGROE", 3) -> "INFORMATION_AGE"
-    scytale_decipher("AOTSRIOALRH_EMRNGIMA_PTT", 8) -> "ALGORITHMS_ARE_IMPORTANT"
-    scytale_decipher("IRIANMOGFANEOT__", 4) -> "INFORMATION_AGE_"
-
-    There is no further brief for this number.
-
-    Parameters
-    ----------
-    message: str
-        a string of uppercase English letters and underscores (underscores represent spaces)
-    shift: int
-        a positive int that does not exceed the length of message
-
-    Returns
-    -------
-    str
-        the decoded message
     '''
-    # Replace `pass` with your code.
-    # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    rows = len(message) // shift
+    decoded= ""
+    for i in range(len(message_)):
+        index=(i % rows)*shift + (i// rows)
+        decoded += message[index]
+    return decoded

@@ -32,7 +32,7 @@ def caesar_cipher(message, shift):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    return''.join(shift_letter(char,shift)for chat in message)
 
 def shift_by_letter(letter, letter_shift):
     '''Shift By Letter.

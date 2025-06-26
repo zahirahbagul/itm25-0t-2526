@@ -8,33 +8,10 @@ def shift_letter(letter, shift):
 
     Shift a letter right by the given number.
     Wrap the letter around if it reaches the end of the alphabet.
-
-    Examples:
-    shift_letter("A", 0) -> "A"
-    shift_letter("A", 2) -> "C"
-    shift_letter("Z", 1) -> "A"
-    shift_letter("X", 5) -> "C"
-    shift_letter(" ", _) -> " "
-
-    *Note: the single underscore `_` is used to acknowledge the presence
-        of a value without caring about its contents.
-
-    Parameters
-    ----------
-    letter: str
-        a single uppercase English letter, or a space.
-    shift: int
-        the number by which to shift the letter.
-
-    Returns
-    -------
-    str
-        the letter, shifted appropriately, if a letter.
-        a single space if the original letter was a space.
     '''
-    # Replace `pass` with your code.
-    # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    if letter == " ":
+        return " "
+    return chr((ord(letter)-ord("A")+shift)% 26+ord ("A"))
 
 def caesar_cipher(message, shift):
     '''Caesar Cipher.
